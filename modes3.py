@@ -8,9 +8,12 @@ import itertools
 
 magic=1.059463
 tonic=220
-length=200
+#length=200
+length=2
 max_pitch=2000
 modes=('ionian','dorian','phrygian','lydian','mixolydian','aeolian','locrian')
+
+#site note: 282 hz
 
 """
 1) Get interval pattern, ie mode
@@ -56,6 +59,7 @@ def get_pitches(tonic, intervals):
 # this could easily be modified to take key:value with lengths that vary by note:
 def play_pitches(pitches, length):
 	for pitch in pitches: 
+		print('pitch: %d' % pitch)
 		os.system("beep -f "+str(pitch)+"-l "+str(length))
 
 # for now, just play all modes:
